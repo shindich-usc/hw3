@@ -70,7 +70,7 @@ void dealloc(Node* head)
 
 struct Filter
 {
-    bool operator()(Node* head) {return (head->val % 2 == 0);}
+    bool operator()(int val) {return (val % 2 == 0);}
 };
 
 

@@ -88,7 +88,7 @@ Node* llfilter(Node* head, Comp pred)
     if (head == nullptr) {return nullptr;}
     // Recurse through the list
     head->next = llfilter(head->next, pred);
-    if (pred(head)) {
+    if (pred(head->val)) {
         Node* tempNode = head->next;
         delete head;
         return tempNode;
