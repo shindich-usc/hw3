@@ -68,7 +68,10 @@ void dealloc(Node* head)
 // -----------------------------------------------
 
 
-
+struct Filter
+{
+    bool operator()(Node* head) {return (head->val % 2 == 0);}
+};
 
 
 int main(int argc, char* argv[])
@@ -86,10 +89,25 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    Node* smaller;
+    Node* larger;
+    int pivot = 9;
+    Filter pred;
 
+    llpivot(head, smaller, larger, pivot);
+    cout << "Smaller: ";
+    print(smaller);
+    cout << "Larger: ";
+    print(larger);
+    cout << "Original: ";
+    print(head);
 
-
+    larger = llfilter(larger, pred);
+    cout << "Larger odds: ";
+    print(larger);
     
+    dealloc(smaller);
+    dealloc(larger);
     return 0;
 
 }

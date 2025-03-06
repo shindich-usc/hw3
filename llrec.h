@@ -84,7 +84,18 @@ Node* llfilter(Node* head, Comp pred)
     // Provide your implementation below
     //*********************************************
 
-
+    // Base Case: Return null if empty list
+    if (head == nullptr) {return nullptr;}
+    // Recurse through the list
+    head->next = llfilter(head->next, pred);
+    if (pred(head)) {
+        Node* tempNode = head->next;
+        delete head;
+        return tempNode;
+    }
+    else {
+        return head;
+    }
 }
 
 #endif
