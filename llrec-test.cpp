@@ -84,6 +84,8 @@ int main(int argc, char* argv[])
     // -----------------------------------------------
     // Feel free to update any code below this point
     // -----------------------------------------------
+
+    /*
     Node* head = readList(argv[1]);
     cout << "Original list: ";
     print(head);
@@ -108,6 +110,16 @@ int main(int argc, char* argv[])
     
     dealloc(smaller);
     dealloc(larger);
+    */
+
+    Node* list = nullptr;
+	Node* small = (Node*) &list; // set to a non-null address
+	Node* large = (Node*) &list; // set to a non-null address
+	llpivot(list, small, large, 42);
+    cout << list << endl;
+    cout << small << endl;
+    cout << large << endl;
+
     return 0;
 
 }
